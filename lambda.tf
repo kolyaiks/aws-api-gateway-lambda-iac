@@ -5,7 +5,7 @@ provider "aws" {
 data "archive_file" "lambda-zip" {
   output_path = "lambda.zip"
   type        = "zip"
-  source_dir  = "lambda"
+  source_dir  = "lambda-source-code"
 }
 
 resource "aws_iam_role" "lambda-iam" {
