@@ -12,6 +12,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_metric_alarm_start" {
   period             = 60 //in seconds
   statistic          = "Sum"
   threshold          = "1"
+
   treat_missing_data = "notBreaching"
   alarm_description  = "This alarm triggers when metric ${aws_cloudwatch_log_metric_filter.lambda_metric_filter_start.metric_transformation[0].name} is above or eqals 1"
   alarm_actions      = [var.sns_topic_arn]
