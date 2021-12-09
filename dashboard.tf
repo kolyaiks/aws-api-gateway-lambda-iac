@@ -33,5 +33,5 @@ locals {
 
 resource "aws_cloudwatch_dashboard" "main" {
   dashboard_name = "my-dashboard"
-  dashboard_body = local.dashboard_body
+  dashboard_body = jsonencode(local.dashboard_body)
 }
